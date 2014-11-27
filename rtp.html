@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>rtpsim</title>
+
+	<link href="lightbox/css/lightbox.css" rel="stylesheet" >
+  </head>
+
+
+  <body>
+
+
+
+
+<h1 id="rtpsim">RTPsim</h1>
+<figure>
+<img src="rtp_img/top_powergrid.png" />
+</figure>
+<h2 id="概要">概要</h2>
+
+<div class="tile">
+    <p>RTPsimは マルチエージェントシミュレーションプラットフォーム「<a href="http://mas.kke.co.jp/">artisoc</a>」を使って開発した リアルタイムプライシング(RTP)グラフィカルシミュレータです。</p>
+    <h3 id="rtpsimで試みていること">RTPsimで試みていること</h3>
+    <ul>
+    <li>目的
+    <ul>
+    <li>電力の需給バランスを分散的に解決する</li>
+    </ul></li>
+    <li>対象
+    <ul>
+    <li>いくつかのエージェント(需要家と供給家)が集まって地域をなしている</li>
+    <li>近くのエージェント同士には情報網が敷かれている</li>
+    <li>地域の中では電力のやりとりが出来る</li>
+    <li>地域は複数存在している</li>
+    <li>近くの地域同士でも電力のやりとりが出来る</li>
+    <li>時間によって発電量が変化する太陽光発電家が存在する</li>
+    </ul></li>
+    <li>手段
+    <ul>
+    <li>地域ごとに別の電力価格をもたせる</li>
+    <li>電力価格は地域の需給に合わせてリアルタイムで変動させる</li>
+    </ul></li>
+    </ul>
+    <h3 id="rtpsimでできること">RTPsimでできること</h3>
+    <ul>
+    <li>電力の融通状態を確認</li>
+    <li>電力価格の決定過程を確認</li>
+    <li>エージェントや地域の数を変える</li>
+    <li>情報網のネットワークを変える</li>
+    <li>価格決定の手法やパラメータを変える</li>
+    </ul>
+</div>
+
+
+<h2 id="rtpsimを実行する">RTPsimを実行する</h2>
+
+<div class="tile">
+    <p>RTPsimの実行にはartisoc playerが必要です。<br /><a href="rtp_install.html">セットアップ方法</a>を参考にartisoc playerを入手してください。</p>
+    <h3 id="download">DOWNLOAD</h3>
+    <p><a href="rtp_img/RTPsim_v20141023.zip">
+    <img src="rtp_img/zip.jpg" height="50" width="50" />RTPsim_v20141023.zip</a></p>
+    <h3 id="rtpsimの使い方">RTPSimの使い方</h3>
+    <a href="rtp_howto.html">RTPSimの使い方</a>
+</div>
+
+<h2 id="rtp研究紹介">RTP研究紹介</h2>
+<div class="tile">
+<a href="rtp_img/RTPSim.pdf">
+<img src="rtp_img/pdf.png" />
+</br>
+RTP研究紹介(pdf)
+</a>
+</div>
+
+
+
+<h2 id="rtpsim紹介動画コンテ">RTPsim紹介動画</h2>
+<div class="tile">
+<a href="rtp_img/movie_conte.pdf">
+<img src="rtp_img/youtube.jpg" />
+<br>
+RTPsim紹介動画(コンテ)
+</a>
+</div>
+
+
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="lightbox/js/jquery-1.8.3.min.js"></script>
+    <script src="lightbox/js/lightbox.js"></script>
+  </body>
+</html>

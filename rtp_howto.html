@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>rtpsim</title>
+
+    <link href="lightbox/css/lightbox.css" rel="stylesheet" >
+  </head>
+
+
+  <body>
+
+
+<p><a href="rtp.html">◀  RTPsimのページに戻る</a></p>
+
+
+<h2 id="rtpsimの使い方">RTPSimの使い方</h2>
+
+<p>ここでは、Artisocの操作方法、RTPSimの見方を説明します。</p>
+
+
+<h3 id="artisocの使い方">Artisocの使い方</h3>
+<div class="tile">
+<h4 id="とりあえずシミュレーションを動かしてみよう">とりあえずシミュレーションを動かしてみよう！</h4>
+<ul>
+<li>RTPSimをArisoc playerで起動すると、下のような画面が現れます。</li>
+<li>画面赤枠①の再生ボタンを押してシミュレーションスタート！</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual1.jpg">
+<img src="rtp_img/Manual1.jpg" alt="Artisoc起動画面" /><figcaption>Artisoc起動画面</figcaption>
+</a>
+</figure>
+<ul>
+<li>RTPSimでは赤枠②で囲まれたコントロールパネルで様々なパラメータを変更して実行することが出来ます。<br />※以下、各パラメータのまとめ</li>
+</ul>
+<table class="table table-striped table-bordered table-hover">
+<thead>
+<tr class="header">
+<th style="text-align: center;">パラメータ名</th>
+<th style="text-align: left;">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">リンクレンジ(地域)</td>
+<td style="text-align: left;">繋がっている地域間の距離。この値より近くに存在する地域同士の電力融通が可能になる。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">リンクレンジ(需要家供給家)</td>
+<td style="text-align: left;">需要家, 供給家エージェント同士の距離。この値より近くに存在するエージェント同士が情報を交換できる。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">地域数</td>
+<td style="text-align: left;">地域の数</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">太陽光発電家最大数</td>
+<td style="text-align: left;">太陽光発電家の最大数</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">家庭最大数</td>
+<td style="text-align: left;">家庭の最大数</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">α</td>
+<td style="text-align: left;">需要量、供給量を更新する速さを決める値。この値が大きければ、需要量と供給量の計算が速くなるが、値が大きすぎると発散してしまい、最適な需要量、供給量を決めることができなくなる。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">β</td>
+<td style="text-align: left;">価格を更新する速さを決める値。この値が大きければ、価格決定は速くなるが、大きすぎると適正価格が決定できない。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">c_i</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">γ</td>
+<td style="text-align: left;">分散的な価格交渉による価格決定の速さを決める値。この値が大きければ早く価格決定できるが、大きすぎると適正な価格が決定できなくなる。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">乱数シード</td>
+<td style="text-align: left;">全く同じランダムな値を生成するための値。この値を変えると、初期値が変わり、表示されるグラフも変わる。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">価格調整モード(交渉型：零時間)</td>
+<td style="text-align: left;">一瞬で価格交渉が行われるとした際のシミュレーション結果を表示する。</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">価格調整モード(交渉型：予測無)</td>
+<td style="text-align: left;">価格交渉に時間はかかるが、推定価格の初期値を決める際の予測がない場合のシミュレーション結果を表示する。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">価格調整モード(交渉型：予測有)</td>
+<td style="text-align: left;">価格交渉のための推定価格を決める際の未来の需要供給量の予測を行った場合のシミュレーション結果を表示する</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<h3 id="rtpsimのウインドウについて">RTPSimのウインドウについて</h3>
+<div class="tile">
+<ul>
+<li>実行ボタンを押すと、下の図のように様々なウィンドウが現れます。</li>
+<li>ここでは、これらウインドウについてそれぞれご説明します。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual2.jpg">
+<img src="rtp_img/Manual2.jpg" alt="Artisoc起動後" /><figcaption>Artisoc起動後</figcaption>
+</a>
+</figure>
+<h4 id="powergridウインドウ">powergridウインドウ</h4>
+<ul>
+<li>このウインドウは地域をグラフィカルに表示しています。</li>
+<li>このシミュレーションでは、ここで表示された地域、エージェントで構成された電力網での分散最適化の結果を示します。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual_powergrid.jpg">
+<img src="rtp_img/Manual_powergrid.jpg" alt="powergridウインドウ" /><figcaption>powergridウインドウ</figcaption>
+</a>
+</figure>
+<h4 id="合計停滞量ウインドウ">合計停滞量ウインドウ</h4>
+<ul>
+<li>電力網全体の需要量と供給量の差を表示するウインドウです。</li>
+<li>0より上の場合は需要過多, 0より下の場合は供給過多となっています。</li>
+<li>供給量と需要量は需要量は完全に一致しなければ電力網は成り立たないので、それを目指して推移しています。</li>
+<li>時間が経つにつれて価格交渉が進み、それに伴って需給差もなくなっています。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual_teitai.jpg">
+<img src="rtp_img/Manual_teitai.jpg" alt="合計停滞量ウインドウ" /><figcaption>合計停滞量ウインドウ</figcaption>
+</a>
+</figure>
+<h4 id="価格スーパーバイザ方式ウインドウ">価格(スーパーバイザ方式)ウインドウ</h4>
+<ul>
+<li>スーパーバイザ方式で価格を決定した場合の、各地域ごとの価格を表示するウインドウです。</li>
+<li>価格交渉はなく、1箇所に需要量、供給量等の情報を集めて計算しています。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual_super.jpg">
+<img src="rtp_img/Manual_super.jpg" alt="価格(スーパーバイザ方式)ウインドウ" /><figcaption>価格(スーパーバイザ方式)ウインドウ</figcaption>
+</a>
+</figure>
+<h4 id="価格交渉ウインドウ">価格交渉ウインドウ</h4>
+<ul>
+<li>価格交渉の結果を表示するウインドウです。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual_nego.jpg">
+<img src="rtp_img/Manual_nego.jpg" alt="価格交渉ウインドウ" /><figcaption>価格交渉ウインドウ</figcaption>
+</a>
+</figure>
+<h4 id="目的関数ウインドウ">目的関数ウインドウ</h4>
+<ul>
+<li>各エージェントの効用の和を表示するウインドウです。</li>
+<li>電力網に所属するエージェント全体の満足度を表しています。満足度が高ければ値は大きく、低ければ小さくなります。</li>
+<li>このシミュレーションでは全エージェントがなるべく満足いく結果になるような最適化を行っています。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual_purpose.jpg">
+<img src="rtp_img/Manual_purpose.jpg" alt="目的関数ウインドウ" /><figcaption>目的関数ウインドウ</figcaption>
+</a>
+</figure>
+<h4 id="timeウインドウ-コンソール画面">timeウインドウ, コンソール画面</h4>
+<h5 id="timeウインドウ">timeウインドウ</h5>
+<ul>
+<li>シミュレーションの現時刻、モード、交渉ステップなどを表示します。</li>
+</ul>
+<h5 id="コンソール画面">コンソール画面</h5>
+<ul>
+<li>地域、エージェントの配置が完了したかどうかを表示します。</li>
+</ul>
+<figure>
+<a class="example-image-link" data-lightbox="event" href="rtp_img/Manual_time_con.jpg">
+<img src="rtp_img/Manual_time_con.jpg" alt="time&amp;コンソール" /><figcaption>time&amp;コンソール</figcaption>
+</a>
+</figure>
+</div>
+
+<p><a href="rtp.html">◀  RTPsimのページに戻る</a></p>
+
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="lightbox/js/jquery-1.8.3.min.js"></script>
+    <script src="lightbox/js/lightbox.js"></script>
+  </body>
+</html>
