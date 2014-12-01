@@ -6,12 +6,16 @@ rtpsim_web
 ---
 
 ### フォルダ
-* lightbox
-	* 画像の自動拡大縮小とlightbox表示
-	* http://lokeshdhakar.com/projects/lightbox2/
-	* jsフォルダ内にjQuery1.8.3.minを配置
 * rtp_img
 	* 画像ファイルはだいたいここ
+* lightbox
+	*  [lightbox2](http://lokeshdhakar.com/projects/lightbox2/)
+* bootstrap
+	* [bootstrap](http://getbootstrap.com)
+* css
+	* [flat-ui](http://designmodo.github.io/Flat-UI/)
+* js
+	* [flat-ui](http://designmodo.github.io/Flat-UI/)
 
 ### ページ
 * rtp.html
@@ -27,9 +31,21 @@ rtpsim_web
 * movie_conte.pdf
 	* 動画コンテ
 
+### 使用framework
+* [flat-ui](http://designmodo.github.io/Flat-UI/)
+	* フラットデザイン用テンプレート
+* [bootstrap](http://getbootstrap.com)
+	* cssフレームワーク(flat-uiより参照)
+* [lightbox2](http://lokeshdhakar.com/projects/lightbox2/)
+	* 画像の自動拡大縮小とlightbox表示
+
 その他注意
 --------
 
 * lightboxによって各画像はページ内の親要素(もしくはブラウザウィンドウ)の幅まで拡大・縮小される
 * 各ページでは内容を節ごとに`<div class="tile">`で囲っているので、必要があれば利用する
+* 各ページではコンテンツ全体を`<div class="container">`で囲っている。現在はコンテンツの幅指定の用途で用いている。
 * lightboxをフォルダごと削除すれば、画像ファイルのリンクはただの画像リンクとして扱われる
+
+### flat-ui改造部分について
+
