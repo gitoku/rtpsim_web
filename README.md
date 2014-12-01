@@ -34,6 +34,8 @@ rtpsim_web
 ### 使用framework
 * [flat-ui](http://designmodo.github.io/Flat-UI/)
 	* フラットデザイン用テンプレート
+	* 今回はこのテンプレートに含まれるサンプルを元にcssを記述
+		* おもな変更は`css/demo.css`
 * [bootstrap](http://getbootstrap.com)
 	* cssフレームワーク(flat-uiより参照)
 * [lightbox2](http://lokeshdhakar.com/projects/lightbox2/)
